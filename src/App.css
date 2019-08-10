@@ -31,3 +31,24 @@
     transform: rotate(360deg);
   }
 }
+
+.card-table {
+  padding: 1rem;
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: 120px 120px 1fr;
+  border: 1px solid #000;
+}
+
+.tarot-card {
+  max-width: 100%;
+  border: 1px solid #000;
+}
+.tarot-card > img {
+  max-height: 180px;
+  border: 1px solid #999;
+}
+
+.tarot-card > img.reverse {
+  transform: rotate(180deg)
+}

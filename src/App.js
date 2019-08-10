@@ -1,17 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-// import Cards from './tarot';
-
-const Cards = [
-  ["The Fool", "01.jpg"], ["The Magician", "02.jpg"], ["The High Priestess", "03.jpg"], ["The Empress", "04.jpg"],
-  ["The Emperor", "05.jpg"], ["The Hierophant", "06.jpg"], ["The Lovers", "07.jpg"], ["The Chariot", "08.jpg"],
-  ["Strength", "09.jpg"], ["The Hermit", "10.jpg"], ["Wheel of Fortune", "11.jpg"], ["Justice", "12.jpg"],
-  ["The Hanged Man", "13.jpg"], ["Death", "14.jpg"], ["Temperance", "15.jpg"], ["The Devil", "16.jpg"],
-  ["The Tower", "17.jpg"], ["The Star", "18.jpg"], ["The Moon", "19.jpg"], ["The Sun", "20.jpg"],
-  ["Judgement", "21.jpg"], ["The World", "22.jpg"]
-];
+import Cards from './tarot';
 
 class App extends React.Component {
   constructor(props) {
@@ -45,9 +35,11 @@ class App extends React.Component {
     return (
       <div>
         <h1>test</h1>
+        <div className="card-table">
         <Card card={this.state.selectedNumbers[0]} />
         <Card card={this.state.selectedNumbers[1]} />
         <Card card={this.state.selectedNumbers[2]} />
+        </div>
       </div>
     )
   }
@@ -59,27 +51,81 @@ class Card extends React.Component {
     super(props);
     this.state = {
       cards: Cards,
+      cardDirection: null,
+      displayState: true,
+      displayStyle: {display: "none"},
     }
   }
 
-  renderCard() {
-    return (
-      Cards
-    );
+  renderImage(img) {
+    return './images/' + img;
   }
 
+  cardDirection() {
+    let rand = (Math.floor(Math.random()*10)%2 === 0) ? "normal" : "reverse";
+    return rand;
+  }
+
+  displayDescription(cardDirection, description) {
+    if(cardDirection === 'normal') {
+      return(
+        <div>
+          {description['t']}
+        </div>
+      )  
+    } else {
+      return(
+        <div>
+          {description['r']}
+        </div>
+      )  
+    }
+  }
+
+  displayDescription2() {
+    // if(cardDirection === 'normal') {
+      // alert(description['t']);
+      // return <DisplayDesc description={description['t']} />
+      // alert('aaa')
+      if(this.state.displayState){
+        this.setState({
+          displayState: !this.state.displayState,
+          displayStyle: {display: "block"}
+        });  
+      } else {
+        this.setState({
+          displayState: !this.state.displayState,
+          displayStyle: {display: "none"}
+        });  
+      }
+  //   } else {
+  //       // alert(description['r']);
+  //  }
+  }
 
   render() {
-    // console.log(this.state.cards[this.props.card]);
-    let n = Number(this.props.card);
-    console.log(n);
-    console.log(Cards[n][0])
+    let direction = this.cardDirection();
     return (
-      <div>
-        {this.state.cards[n][1]}
-
-        {/* {this.state.cards[this.props.card][0]} */}
+      <div className="tarot-card">
+        {this.state.cards[this.props.card].name}<br />
+        <img src={this.renderImage(this.state.cards[this.props.card].img)} 
+        alt={this.state.cards[this.props.card].name} 
+        className={direction} onClick={() => this.displayDescription2(direction, this.state.cards[this.props.card].desciption)}
+        /><br />
+        <div style={this.state.displayStyle}>
+          {this.displayDescription(direction, this.state.cards[this.props.card].desciption)}
+        </div>
       </div>
+    )
+  }
+}
+
+class DisplayDesc extends React.Component {
+  render() {
+    return(
+      <div>
+      {this.props.description}
+    </div>
     )
   }
 }
