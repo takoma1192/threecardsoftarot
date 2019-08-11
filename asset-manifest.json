@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.365e37e5.chunk.css",
-    "main.js": "/static/js/main.160003c0.chunk.js",
-    "main.js.map": "/static/js/main.160003c0.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.d6a534e5.chunk.js": "/static/js/2.d6a534e5.chunk.js",
-    "static/js/2.d6a534e5.chunk.js.map": "/static/js/2.d6a534e5.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.8f3a642cf11fb61a68a11523d47a144a.js": "/precache-manifest.8f3a642cf11fb61a68a11523d47a144a.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.365e37e5.chunk.css.map": "/static/css/main.365e37e5.chunk.css.map"
+    "main.css": "/threecardsoftarot/static/css/main.365e37e5.chunk.css",
+    "main.js": "/threecardsoftarot/static/js/main.fa1a331f.chunk.js",
+    "main.js.map": "/threecardsoftarot/static/js/main.fa1a331f.chunk.js.map",
+    "runtime~main.js": "/threecardsoftarot/static/js/runtime~main.085b7b9b.js",
+    "runtime~main.js.map": "/threecardsoftarot/static/js/runtime~main.085b7b9b.js.map",
+    "static/js/2.d6a534e5.chunk.js": "/threecardsoftarot/static/js/2.d6a534e5.chunk.js",
+    "static/js/2.d6a534e5.chunk.js.map": "/threecardsoftarot/static/js/2.d6a534e5.chunk.js.map",
+    "index.html": "/threecardsoftarot/index.html",
+    "precache-manifest.81f1c57cc595c5496f8dc365dcbcebd8.js": "/threecardsoftarot/precache-manifest.81f1c57cc595c5496f8dc365dcbcebd8.js",
+    "service-worker.js": "/threecardsoftarot/service-worker.js",
+    "static/css/main.365e37e5.chunk.css.map": "/threecardsoftarot/static/css/main.365e37e5.chunk.css.map"
   }
 }
