@@ -1,3 +1,6 @@
+html {
+  font-size: 16px;
+}
 .App {
   text-align: center;
 }
@@ -32,23 +35,107 @@
   }
 }
 
-.card-table {
-  padding: 1rem;
+.main {
   width: 100%;
-  display: inline-grid;
-  grid-template-columns: 120px 120px 1fr;
-  border: 1px solid #000;
+  padding: 0 20px;
+}
+
+.header {
+  text-align: center;
+  margin: 10px auto;
+}
+
+h1 {
+  font-size: 1.2rem;
+}
+
+.btn-area > button {
+  font-size: 1.0rem;
+}
+
+.card-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 0 10px;
 }
 
 .tarot-card {
   max-width: 100%;
-  border: 1px solid #000;
 }
+
 .tarot-card > img {
-  max-height: 180px;
+  max-height: 140px;
   border: 1px solid #999;
 }
 
 .tarot-card > img.reverse {
   transform: rotate(180deg)
+}
+
+.card-timing {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+span.card-description-title {
+  display: block;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-description {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  margin: auto 0;
+  height: 80%;
+}
+
+.closeBtnArea {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.closeBtnArea > button {
+  width: 100px;
+  height: 30px;
+  color: #000;
+  background: #fff;
+  margin: 0 auto 20px;
+}
+
+a.tryagainbtn {
+  display: inline-block;
+  margin: 4px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fff;
+  border-bottom: solid 4px #454655;
+  border-right: solid 2px #454655;
+  border-radius: 4px;
+  background: #CE5937;
+}
+
+a.tryagainbtn:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+  border-right: none;
+}
+
+button.opencard {
+  margin: 4px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border-bottom: solid 4px #454655;
+  border-right: solid 2px #454655;
+  border-radius: 4px;
+  background: #4da6ff;
 }

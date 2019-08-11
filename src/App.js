@@ -9,7 +9,8 @@ class App extends React.Component {
     this.state = {
       maxGetCards: 3,
       numberOfCards: Cards.length,
-      selectedNumbers: []
+      selectedNumbers: [],
+      displayType: false,
     }
   }
 
@@ -31,14 +32,28 @@ class App extends React.Component {
     this.shuffleCards();
   }
 
+  displayType() {
+    this.setState({
+      displayType: true
+    });
+  }
+
   render() {
     return (
-      <div>
-        <h1>test</h1>
+      <div className="main">
+        <Header />
+        <div className="btn-area">
+        {
+          (this.state.displayType)? <a href="/" className="tryagainbtn">Try Again</a>:""
+        }
+        {
+          (!this.state.displayType)? <button onClick={() => this.displayType()} className="opencard">Open Cards!</button>:""
+        }
+        </div>
         <div className="card-table">
-        <Card card={this.state.selectedNumbers[0]} />
-        <Card card={this.state.selectedNumbers[1]} />
-        <Card card={this.state.selectedNumbers[2]} />
+        <Card card={this.state.selectedNumbers[0]} displayType={this.state.displayType} timePeriod="past" />
+        <Card card={this.state.selectedNumbers[1]} displayType={this.state.displayType} timePeriod="present" />
+        <Card card={this.state.selectedNumbers[2]} displayType={this.state.displayType} timePeriod="future" />
         </div>
       </div>
     )
@@ -54,6 +69,7 @@ class Card extends React.Component {
       cardDirection: null,
       displayState: true,
       displayStyle: {display: "none"},
+      timing: {past: "過去", present: "現在", future: "未来"},
     }
   }
 
@@ -64,6 +80,13 @@ class Card extends React.Component {
   cardDirection() {
     let rand = (Math.floor(Math.random()*10)%2 === 0) ? "normal" : "reverse";
     return rand;
+  }
+
+  componentWillMount() {
+    const direction = this.cardDirection();
+    this.setState({
+      cardDirection: direction
+    })
   }
 
   displayDescription(cardDirection, description) {
@@ -83,49 +106,74 @@ class Card extends React.Component {
   }
 
   displayDescription2() {
-    // if(cardDirection === 'normal') {
-      // alert(description['t']);
-      // return <DisplayDesc description={description['t']} />
-      // alert('aaa')
-      if(this.state.displayState){
-        this.setState({
-          displayState: !this.state.displayState,
-          displayStyle: {display: "block"}
-        });  
-      } else {
-        this.setState({
-          displayState: !this.state.displayState,
-          displayStyle: {display: "none"}
-        });  
-      }
-  //   } else {
-  //       // alert(description['r']);
-  //  }
+
+    if(this.state.displayState){
+      this.setState({
+        displayState: !this.state.displayState,
+        displayStyle: {
+          display: "block",
+          position: "absolute",
+          top: "10px",
+          left: "10px",
+          bottom: "10px",
+          right: "10px",
+          border: "1px solid #000",
+          backgroundColor: "rgba(0,0,0,0.8)",
+          color: "#fff",
+          zIndex: "100",
+        }
+      });
+    }
+    return;
+  }
+
+  closeWindowButton() {
+    this.setState({
+      displayState: !this.state.displayState,
+      displayStyle: {display: "none"}
+    });  
   }
 
   render() {
-    let direction = this.cardDirection();
-    return (
-      <div className="tarot-card">
-        {this.state.cards[this.props.card].name}<br />
-        <img src={this.renderImage(this.state.cards[this.props.card].img)} 
-        alt={this.state.cards[this.props.card].name} 
-        className={direction} onClick={() => this.displayDescription2(direction, this.state.cards[this.props.card].desciption)}
-        /><br />
-        <div style={this.state.displayStyle}>
-          {this.displayDescription(direction, this.state.cards[this.props.card].desciption)}
+    console.log(this.props.displayType);
+    let period = this.state.timing[this.props.timePeriod];
+    if(this.props.displayType) {
+      return (
+        <div className="tarot-card">
+          {/* {this.state.cards[this.props.card].name}<br /> */}
+          <p className="card-timing">{period}</p>
+          <img src={this.renderImage(this.state.cards[this.props.card].img)} 
+          alt={this.state.cards[this.props.card].name} 
+          className={this.state.cardDirection} onClick={() => this.displayDescription2(this.state.direction, this.state.cards[this.props.card].desciption)}
+          /><br />
+          <div style={this.state.displayStyle} onClick={() => this.closeWindowButton()}>
+            <div className="card-description">
+              <span className="card-description-title">{period}</span><br />
+              {this.displayDescription(this.state.cardDirection, this.state.cards[this.props.card].desciption)}
+            </div>
+            <div className="closeBtnArea"><button>Close</button></div>
+          </div>
         </div>
-      </div>
-    )
+      )
+    } else {
+      return (
+        <div className="tarot-card">
+          <p className="card-timing">{period}</p>
+          <img src="./images/card_front.png" alt="Tarot Card" />
+        </div>
+      )
+    }
   }
 }
 
-class DisplayDesc extends React.Component {
+class Header extends React.Component{
+  
+
   render() {
     return(
-      <div>
-      {this.props.description}
-    </div>
+      <div className="header">
+        <h1>3 Cards Tarot</h1>
+      </div>
     )
   }
 }
