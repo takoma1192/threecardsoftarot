@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/threecardsoftarot/precache-manifest.81f1c57cc595c5496f8dc365dcbcebd8.js"
+  "/threecardsoftarot/precache-manifest.bb6eaa26a5dbf4be63160674b335e764.js"
 );
 
 self.addEventListener('message', (event) => {

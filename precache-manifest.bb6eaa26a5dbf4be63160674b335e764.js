@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ba6fdefdb2c0869c5e07ef06fd39f7be",
+    "revision": "5f1ff82aea030a4f3485154f3576a997",
     "url": "/threecardsoftarot/index.html"
   },
   {
-    "revision": "0261eb71cbaf8f61d71f",
+    "revision": "cc23fbb7c6c80fc2d065",
     "url": "/threecardsoftarot/static/css/main.365e37e5.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/threecardsoftarot/static/js/2.d6a534e5.chunk.js"
   },
   {
-    "revision": "0261eb71cbaf8f61d71f",
-    "url": "/threecardsoftarot/static/js/main.fa1a331f.chunk.js"
+    "revision": "cc23fbb7c6c80fc2d065",
+    "url": "/threecardsoftarot/static/js/main.babfbb0b.chunk.js"
   },
   {
     "revision": "1413ecc3952f65f5161f",

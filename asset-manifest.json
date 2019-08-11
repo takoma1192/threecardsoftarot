@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/threecardsoftarot/static/css/main.365e37e5.chunk.css",
-    "main.js": "/threecardsoftarot/static/js/main.fa1a331f.chunk.js",
-    "main.js.map": "/threecardsoftarot/static/js/main.fa1a331f.chunk.js.map",
+    "main.js": "/threecardsoftarot/static/js/main.babfbb0b.chunk.js",
+    "main.js.map": "/threecardsoftarot/static/js/main.babfbb0b.chunk.js.map",
     "runtime~main.js": "/threecardsoftarot/static/js/runtime~main.085b7b9b.js",
     "runtime~main.js.map": "/threecardsoftarot/static/js/runtime~main.085b7b9b.js.map",
     "static/js/2.d6a534e5.chunk.js": "/threecardsoftarot/static/js/2.d6a534e5.chunk.js",
     "static/js/2.d6a534e5.chunk.js.map": "/threecardsoftarot/static/js/2.d6a534e5.chunk.js.map",
     "index.html": "/threecardsoftarot/index.html",
-    "precache-manifest.81f1c57cc595c5496f8dc365dcbcebd8.js": "/threecardsoftarot/precache-manifest.81f1c57cc595c5496f8dc365dcbcebd8.js",
+    "precache-manifest.bb6eaa26a5dbf4be63160674b335e764.js": "/threecardsoftarot/precache-manifest.bb6eaa26a5dbf4be63160674b335e764.js",
     "service-worker.js": "/threecardsoftarot/service-worker.js",
     "static/css/main.365e37e5.chunk.css.map": "/threecardsoftarot/static/css/main.365e37e5.chunk.css.map"
   }
